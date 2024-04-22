@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django - Form</title>
+</head>
+<body>
+    <h2>Contact Form</h2>
+
+<table>
+<form action="#" method="post">
+    {% csrf_token %}
+    <tr>
+        <td><label for="name">Name:</label></td>
+        <td><input type="text" id="name" name="name" required></td>
+    </tr>
+    <tr>
+        <td><label for="age">Age:</label></td>
+        <td><input type="number" id="age" name="age" required></td>
+    </tr>
+    <tr>
+        <td><label for="mobile">Mobile No.:</label></td>
+        <td><input type="tel" id="mobile" name="mobile" required></td>
+    </tr>
+    <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+    </tr>
+    <tr>
+        <td><label for="message">Message:</label></td>
+        <td><textarea id="message" name="message" required></textarea></td>
+    </tr>
+    <tr>
+        <td><button type="submit">Submit</button></td>
+    </tr>
+</form>
+</table>
+</body>
+</html>

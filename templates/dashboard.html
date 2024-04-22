@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django - CRUD</title>
+    <link rel="stylesheet" href="{% static 'CSS/dashboardStyle.css' %}">
+    <script src="https://kit.fontawesome.com/6928a1279b.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Function to update IDs of table rows dynamically on web page
+        function updateIds() {
+            var tableRows = document.querySelectorAll('tbody tr');
+            tableRows.forEach(function(row, index) {
+                row.setAttribute('id', 'record_' + (index + 1));
+            });
+        }
+    </script>
+</head>
+<body>
+    <table class>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mobile No.</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr id="record_{{ forloop.counter }}">
+                <td>{{ forloop.counter }}</td> <!-- Use forloop.counter for dynamic ID -->
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.message}}</td>
+                <td><a href="{% url 'edit' i.id %}" style="text-decoration: none; color: black;"><i class="fa-solid fa-pen-nib"></i></a></td>
+                <td><a href="{% url 'delete' i.id %}" style="text-decoration: none; color: black;"><i class="fa-solid fa-trash"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        // Call the function to update IDs after page load
+        updateIds();
+    </script>
+</body>
+</html>
