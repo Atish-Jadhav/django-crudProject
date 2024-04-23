@@ -1,0 +1,21 @@
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+form {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+  
+.container input {
+    margin-bottom: 10px; /* Adds space between input elements */
+}
+  
+form button {
+    margin-top: 10px; 
+}
+  
