@@ -29,4 +29,7 @@ urlpatterns = [
     # The logic is in HTML page which is carried out using {% url %} tag
     path('delete/<rid>/', views.delete, name = 'delete'), 
     path('update/<uid>/', views.edit, name = 'edit'),
+    path('login/', views.ulogin, name='login'),
+    path('logout/', views.ulogout, name='logout'),
+    path('register/', views.signup, name='register'),
 ]

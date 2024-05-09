@@ -50,3 +50,7 @@ i:hover {
     transform: scale(1.2);
     color: red;
 }
+
+a {
+    position: absolute;
+}
